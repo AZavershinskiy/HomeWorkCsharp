@@ -1,7 +1,6 @@
 ﻿// "Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом"
 
-Console.WriteLine("Введите пятизначное число: ");
-int digit = Convert.ToInt32(Console.ReadLine());
+int digit = InputInt("Введите пятизначное число: ");
 
 if (digit > 10000 && digit < 100000)
 {
@@ -21,4 +20,10 @@ if (digit > 10000 && digit < 100000)
 else
 {
     Console.WriteLine("Это НЕ пятизначное число");
+}
+
+int InputInt(string output)
+{
+    Console.Write(output);
+    return Convert.ToInt32(Console.ReadLine());
 }
