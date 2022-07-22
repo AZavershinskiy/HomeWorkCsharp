@@ -16,14 +16,6 @@ double x = (b2 - b1) / (k1 - k2);
 double y = k1 * x + b1;
 Console.WriteLine($"Координаты точки пересечения прямых: x({x}), y({y})");
 
-void PrintArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.WriteLine();
-}
 double InputInt(string output)
 {
     Console.Write(output);
