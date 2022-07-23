@@ -1,4 +1,4 @@
-﻿// "Задайте двумерный массив. Напишите программу, которая упорядочит по УБЫВАНИЮ элементы каждой строки двумерного массива"
+﻿// "Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов"
 
 int m = InputInt("Введите количество строк: ");
 int n = InputInt("Введите количество столбцов: ");
@@ -7,27 +7,27 @@ int[,] array = new int[m, n];
 FillArray(array);
 Console.WriteLine("Исходный массив:");
 PrintArray(array);
-SortRowsArray(array);
-Console.WriteLine("Отсортированные строки массива по убыванию:");
-PrintArray(array);
+FindMinSumRow(array);
+Console.WriteLine(FindMinSumRow(array) + " - номер строки с наименьшей суммой элементов");
 
-void SortRowsArray(int[,] array)
+int FindMinSumRow(int[,] array)
 {
+    int minSumRow = int.MaxValue;
+    int minRowIndex = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        int sumRow = 0;
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int t = 0; t < array.GetLength(1); t++)
-            {
-                if (array[i, j] > array[i, t])
-                {
-                    int temp = array[i, j];
-                    array[i, j] = array[i, t];
-                    array[i, t] = temp;
-                }
-            }
+            sumRow += array[i, j];
+        }
+        if (sumRow < minSumRow)
+        {
+            minSumRow = sumRow;
+            minRowIndex = i;
         }
     }
+    return minRowIndex + 1;
 }
 int InputInt(string output)
 {
@@ -54,4 +54,5 @@ void PrintArray(int[,] array)
         }
         Console.WriteLine();
     }
+    Console.WriteLine();
 }
