@@ -14,12 +14,11 @@ FillArray(arraySecond);
 Console.WriteLine("Исходный массив №2:");
 PrintArray(arraySecond);
 
-FillArray(arrayProduct);
-ProductArrays(arrayFirst, arraySecond, arrayProduct);
+arrayProduct = ProductArrays(arrayFirst, arraySecond);
 Console.WriteLine("Массив произведений элементов от первых двух массивов:");
 PrintArray(arrayProduct);
 
-void ProductArrays(int[,] arrayFirst, int[,] arraySecond, int[,] arrayProduct)
+int[,] ProductArrays(int[,] arrayFirst, int[,] arraySecond)
 {
     for (int i = 0; i < arrayFirst.GetLength(0); i++)
     {
@@ -28,6 +27,7 @@ void ProductArrays(int[,] arrayFirst, int[,] arraySecond, int[,] arrayProduct)
             arrayProduct[i, j] = arrayFirst[i, j] * arraySecond[i, j];
         }
     }
+    return arrayProduct;
 }
 int InputInt(string output)
 {

@@ -7,7 +7,6 @@ int[,] array = new int[m, n];
 FillArray(array);
 Console.WriteLine("Исходный массив:");
 PrintArray(array);
-FindMinSumRow(array);
 Console.WriteLine(FindMinSumRow(array) + " - номер строки с наименьшей суммой элементов");
 
 int FindMinSumRow(int[,] array)
