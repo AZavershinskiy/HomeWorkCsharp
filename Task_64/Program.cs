@@ -9,10 +9,7 @@ int NaturalNumbers(int m, int n)
 {
     if (m < n)
     {
-        if (n == m)
-            return m;
-        else
-            Console.Write(NaturalNumbers(m, n - 1) + ", ");
+        Console.Write(NaturalNumbers(m, n - 1) + ", ");
         return n;
     }
     else

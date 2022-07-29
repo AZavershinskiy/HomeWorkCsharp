@@ -10,22 +10,17 @@ int SumNaturalNumbers(int m, int n)
     if (m < n)
     {
         int sum = m;
-        if (n == m)
-            return sum;
-        else
-        {
-            sum += SumNaturalNumbers(m + 1, n);
-            return sum;
-        }
+        sum += SumNaturalNumbers(++m, n);
+        return sum;
     }
     else
     {
-        int sum = n;
         if (n == m)
-            return sum;
+            return m;
         else
         {
-            sum += SumNaturalNumbers(m, n + 1);
+            int sum = n;
+            sum += SumNaturalNumbers(m, ++n);
             return sum;
         }
     }
